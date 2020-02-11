@@ -1,6 +1,8 @@
 import { Controller, Get, Render, Post, Body, Response } from '@nestjs/common';
+import { ApiTags, ApiOperation } from '@nestjs/swagger';
 
 @Controller('user')
+@ApiTags('用户相关')
 export class UserController {
   @Get()
   @Render('default/user')
