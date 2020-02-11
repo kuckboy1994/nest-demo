@@ -10,12 +10,3 @@ export class CreatePostDto {
   @IsString()
   content: string;
 }
-
-export class PostDto {
-  @ApiProperty({ description: 'id' })
-  id: string;
-  @ApiProperty({ description: '帖子标题' })
-  title: string;
-  @ApiProperty({ description: '帖子内容' })
-  content: string;
-}

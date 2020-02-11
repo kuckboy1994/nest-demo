@@ -2,18 +2,18 @@ import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import * as mongoose from 'mongoose';
+// import * as mongoose from 'mongoose';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
-  mongoose.connect('mongodb://localhost:27017/', {
+  /* mongoose.connect('mongodb://localhost:27017/', {
     useNewUrlParser: true,
     useFindAndModify: true,
     useCreateIndex: true,
     // useUnifiedTopology: true,
     dbName: 'test',
-  });
+  }); */
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   app.useStaticAssets(join(__dirname, '..', 'public'), {
     prefix: '/static',
